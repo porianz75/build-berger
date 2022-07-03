@@ -1,0 +1,40 @@
+
+:root {
+    --cursor-size: 50px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#cursor {
+    mix-blend-mode: difference;
+    overflow: hidden;
+    pointer-events: none;
+    width: 110%;
+    height: 110%;
+    position: fixed;
+    top: calc(var(--cursor-size) * -0.5);
+    left: calc(var(--cursor-size) * -0.5);
+    filter: url(#circleSvg);
+    z-index: 1000;
+    display: block;
+}
+
+.cursor__shape{
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    transform-origin: center;
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    border-radius: 100%;
+background-color: #ffffff;
+}
+
+
+.circleSvg {
+    display: none;
+    vertical-align: middle;
+}
